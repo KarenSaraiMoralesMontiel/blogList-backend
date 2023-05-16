@@ -74,7 +74,7 @@ describe('unique users and blogs operation', () => {
       username: 'root',
       password: 'sekret'
     }
-    console.log(JSON.stringify(loginData))
+    //console.log(JSON.stringify(loginData))
     const user = await api
       .post('/api/login')
       .send(loginData)
@@ -83,7 +83,7 @@ describe('unique users and blogs operation', () => {
     console.log('user, ', user.body)
 
     const token = user.body.token
-    console.log(JSON.stringify(token))
+    //console.log(JSON.stringify(token))
     const decodedToken = jwt.verify(token, process.env.SECRET)
     
     if (!token || !decodedToken.id) {
